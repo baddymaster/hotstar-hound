@@ -4,8 +4,7 @@ Stream videos from Hotstar directly into your browser
 ### Requirements
 - Python 2.7
 - requests
-- livestreamer
-- webbrowser
+- livestreame
 
 ### Installation
 Run `pip install -r requirements.txt` in the shell to install all dependencies
