@@ -4,6 +4,7 @@ import json
 import livestreamer
 import webbrowser as wb
 import os
+import pyperclip
 
 ### GLOBAL VARIABLES ###
 streams = None
@@ -57,7 +58,8 @@ def openStream(stream_url):
         ----------------- Menu -----------------
          1. Open stream in default Browser 
          2. Open stream in default Media Player
-         3. Exit
+         3. Copy link to clipboard
+         4. Exit
            ''')
     choice = raw_input('Enter choice : ')
 
@@ -83,6 +85,8 @@ def openStream(stream_url):
         #os.system("livestreamer '" + stream_url_hls + "' '" + quality + "'")
         os.system("vlc " + stream_url)
     elif choice == 3:
+        pyperclip.copy(stream_url)
+    elif choice == 4:
         print('Exiting.\n')
         sys.exit(0)
     else:
