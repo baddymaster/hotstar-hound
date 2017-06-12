@@ -1,0 +1,3 @@
+requests
+livestreamer
+webbrowser
