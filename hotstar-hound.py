@@ -47,7 +47,7 @@ def parseStreamURL(stream_url):
         print('Incorrect option. Switching to default...\n')
         quality = 'best'
         stream_url = streams[quality].url
-    #print stream_url
+    print stream_url
     return stream_url
 
 def openStream(stream_url):
