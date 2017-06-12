@@ -48,7 +48,7 @@ def parseStreamURL(stream_url):
         print('Incorrect option. Switching to default...\n')
         quality = 'best'
         stream_url = streams[quality].url
-    print stream_url
+    #print stream_url
     return stream_url
 
 def openStream(stream_url):
@@ -59,7 +59,8 @@ def openStream(stream_url):
          1. Open stream in default Browser 
          2. Open stream in default Media Player
          3. Copy link to clipboard
-         4. Exit
+         4. Display link on console
+         5. Exit
            ''')
     choice = raw_input('Enter choice : ')
 
@@ -82,12 +83,14 @@ def openStream(stream_url):
                     browser = wb.get()
         browser.open_new_tab(stream_url)    
     elif choice == 2:
-        #os.system("livestreamer '" + stream_url_hls + "' '" + quality + "'")
-        os.system("vlc " + stream_url)
+        os.system("livestreamer '" + stream_url_hls + "' '" + quality + "'")
+        #os.system("vlc " + stream_url)
     elif choice == 3:
         pyperclip.copy(stream_url)
         print('Streaming link copied to clipboard.\n')
     elif choice == 4:
+        print('Stream link : %s\n' % stream_url)
+    elif choice == 5:
         print('Exiting.\n')
         sys.exit(0)
     else:
