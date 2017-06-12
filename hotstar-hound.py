@@ -70,13 +70,13 @@ def openStream(stream_url):
     if choice == 1:
         try:
             browser = wb.get('safari')
-        except webbrowser.Error:
+        except wb.Error:
             try:
                 browser = wb.get('chrome')
-            except webbrowser.Error:
+            except wb.Error:
                 try:
                     browser = wb.get('google-chrome')
-                except webbrowser.Error:
+                except wb.Error:
                     browser = wb.get()
         browser.open_new_tab(stream_url)    
     elif choice == 2:
