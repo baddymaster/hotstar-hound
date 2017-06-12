@@ -112,6 +112,9 @@ if __name__ == '__main__':
     elif len(sys.argv) == 1:
         link = getLink()
         v_id = link.split("/")[-1]
+        if v_id == '':
+            v_id = link.split('/')[-2]
+            
         try:
             v_id_int = int(v_id)    
         except ValueError:
