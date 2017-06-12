@@ -86,6 +86,7 @@ def openStream(stream_url):
         os.system("vlc " + stream_url)
     elif choice == 3:
         pyperclip.copy(stream_url)
+        print('Streaming link copied to clipboard.\n')
     elif choice == 4:
         print('Exiting.\n')
         sys.exit(0)
